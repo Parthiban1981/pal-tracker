@@ -22,6 +22,8 @@ public class SecurityApiTest {
 
     @LocalServerPort
     private String port;
+
+    @Autowired
     private TestRestTemplate authorizedRestTemplate;
 
     @Autowired
