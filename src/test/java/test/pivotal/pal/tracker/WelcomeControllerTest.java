@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import io.pivotal.pal.tracker.WelcomeController;
 public class WelcomeControllerTest {
 
     @Test
