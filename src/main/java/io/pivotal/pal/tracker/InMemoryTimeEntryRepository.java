@@ -15,7 +15,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
     }
 
     @Override
-    public TimeEntry find(long id) {
+    public TimeEntry find(Long id) {
         for(TimeEntry entry : timeEntries) {
             if(entry.getId() == id)
                 return entry;
@@ -29,7 +29,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
     }
 
     @Override
-    public TimeEntry update(long id, TimeEntry entry) {
+    public TimeEntry update(Long id, TimeEntry entry) {
         for(int i =0; i < timeEntries.size(); i++){
             if(timeEntries.get(i).getId() == id) {
                 entry.setId(id);
@@ -41,16 +41,13 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
     }
 
     @Override
-    public TimeEntry delete(long id) {
-
+    public void delete(Long id) {
         Iterator<TimeEntry> it = timeEntries.listIterator();
         while (it.hasNext()) {
             TimeEntry te = it.next();
             if(te.getId() == id) {
                 it.remove();
-                return te;
             }
         }
-        return null;
     }
 }
